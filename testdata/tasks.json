@@ -7,16 +7,12 @@
 		"userPriority": 1,
 		"size": 1,
 		"date": "2015-05-18",
-		"recurrence": {
-			"enabled": false,
-			"weekdays": []
-		},
+		"recurrent": false,
+		"weekdays": [],
 		"id": 0,
-		"dependencies": {
-			"pre": [],
-			"post": [],
-			"sub": []
-		}
+		"pre": [],
+		"post": [],
+		"sub": []
 	},
 	{
 		"title": "Write a blog post",
@@ -26,16 +22,12 @@
 		"userPriority": 3,
 		"size": 3,
 		"date": null,
-		"recurrence": {
-			"enabled": true,
-			"weekdays": [2] // Every Tuesday
-		},
+		"recurrent": true,
+		"weekdays": [2], // Every Tuesday
 		"id": 1,
-		"dependencies": {
-			"pre": [],
-			"post": [],
-			"sub": []
-		}
+		"pre": [],
+		"post": [],
+		"sub": []
 	},
 	{
 		"title": "Publish blog post",
@@ -45,16 +37,12 @@
 		"userPriority": 3,
 		"size": 1,
 		"date": null,
-		"recurrence": {
-			"enabled": true,
-			"weekdays": [3] // Every Wednesday
-		},
+		"recurrent": true,
+		"weekdays": [3], // Every Wednesday
 		"id": 2,
-		"dependencies": {
-			"pre": [1], // Post needs to be written before it can be published
-			"post": [],
-			"sub": []
-		}
+		"pre": [1], // Post needs to be written before it can be published
+		"post": [],
+		"sub": []
 	},
 	{
 		"title": "Maintain a blog",
@@ -64,15 +52,11 @@
 		"userPriority": 2,
 		"size": null,
 		"date": null,
-		"recurrence": {
-			"enabled": false,
-			"weekdays": []
-		},
+		"recurrent": false,
+		"weekdays": [],
 		"id": 3,
-		"dependencies": {
-			"pre": [],
-			"post": [],
-			"sub": [1] // The recurring blog post task is a subtask
-		}
+		"pre": [],
+		"post": [],
+		"sub": [1] // The recurring blog post task is a subtask
 	}
 ]

@@ -1,14 +1,25 @@
 import React from 'react'
-import app from '../../App'
+import app from 'ampersand-app'
+import { APPNAME } from '../../data/constants'
 
-import ViewNavigation from './ViewNavigation.jsx!'
+import TaskListNavigation from './TaskListNavigation.jsx!'
+
+const VIEWNAVS = {
+	'taskListNav': TaskListNavigation
+}
 
 class Header extends React.Component {
 
+	constructor() {
+		super()
+	}
+
 	render() {
+		var RenderNav = VIEWNAVS[this.props.nav]
+
 		return <header>
-			<h1>{app.data.appname}</h1>
-			<ViewNavigation />
+			<h1>{APPNAME}</h1>
+			<RenderNav />
 		</header>
 	}
 }

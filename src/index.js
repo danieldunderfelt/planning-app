@@ -1,5 +1,5 @@
-import App from './App'
+import app from './app/App'
 
 (() => {
-	App.boot()
+	app.boot()
 })()

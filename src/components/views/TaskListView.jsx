@@ -1,10 +1,13 @@
 import React from 'react'
-import app from '../../App'
+import app from 'ampersand-app'
+import Header from '../../header/Header.jsx!'
 
 class TaskListView extends React.Component {
 
 	render() {
-		return <ul></ul>
+		return <section className="task-view">
+			<Header nav="taskListNav" />
+		</section>
 	}
 }
 

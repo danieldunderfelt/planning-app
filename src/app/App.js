@@ -5,8 +5,8 @@ import routes from '../routes'
 export class App {
 
 	boot() {
-		console.log("hello?")
-		Router.run(routes, Router.HistoryLocation, (Root) => {
+
+		Router.run(routes, (Root) => {
 			React.render(<Root/>, document.getElementById('app'));
 		})
 	}

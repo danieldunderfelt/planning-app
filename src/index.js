@@ -1,5 +1,6 @@
-import app from './app/App'
+import App from './app/App'
 
 (() => {
+	let app = new App()
 	app.boot()
 })()

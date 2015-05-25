@@ -1,6 +1,7 @@
 import React from 'react'
-import app from 'ampersand-app'
-import ViewRenderer from './ViewRenderer.jsx!'
+import Router from 'react-router'
+
+const RouteHandler = Router.RouteHandler
 
 class AppView extends React.Component {
 
@@ -10,8 +11,9 @@ class AppView extends React.Component {
 	}
 
 	render() {
-		return <div className="app-container">
-			<ViewRenderer />
+		return <div className="app__frame">
+			<h1>Planning app!</h1>
+			<RouteHandler />
 		</div>
 	}
 }

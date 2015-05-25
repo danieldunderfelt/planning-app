@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+$breakpoints: "mobile" 0px, "tablet" 768px, "desktop" 1024px, "wide" 1280px !default;
+$default-width: 940px !default;
+
+// Internal from here on out
+
+@mixin clear {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin r($value, $operator: "min-width", $query: 'screen') {
+	@media only #{$query} and (#{$operator}: #{$value}) {
+		@content;
+	}
+}
+
+@mixin bp($media-name) {
+
+	@if $media-name == nth(nth($breakpoints, 1), 1) {
+		@include r(nth(nth($breakpoints, 2), 2) - 1, "max-width") { @content; }
+	}
+
+	@else {
+
+		@each $bp in $breakpoints {
+			$bp-name: nth($bp, 1);
+			$bp-val: nth($bp, 2);
+
+			@if $bp-name == $media-name {
+				@include r($bp-val) {
+					@content;
+				}
+			}
+		}
+	}
+}
+
+@function prepend($list, $value) {
+	@return join($value, $list);
+}
+
+@function get-width($bp-width, $width) {
+
+	@if $width == false or $width == 0 {
+		@return 100%;
+	}
+
+	@if unit($width) == unit($bp-width) and $bp-width > $width {
+		@return $width;
+	}
+
+	@return 100%;
+}
+
+@function get-child-width($children, $width) {
+	@return $width / $children;
+}
+
+@mixin sleek($selector, $bp-children) {
+	$element-children: $bp-children !global;
+	$last-val: 1;
+
+	#{$selector} {
+		@include clear;
+
+		$i: 1;
+
+		@each $bp in $breakpoints {
+			$bp-name: nth($bp, 1);
+			$bp-val: nth($bp, 2);
+
+			@if $i > length($bp-children) {
+				$child-space: $last-val;
+			}
+			@else {
+				$child-space: nth($bp-children, $i);
+			}
+
+			@include bp($bp-name) {
+
+				> * {
+					width: get-child-width($child-space, 100%);
+					float: left;
+				}
+			}
+
+			$last-val: $child-space;
+
+			$i: $i + 1;
+		}
+
+		@content;
+	}
+}
+
+@mixin sleek-outer($center: true, $width: $default-width) {
+
+	width: 100%;
+	max-width: $width;
+
+	@if $center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@each $bp in $breakpoints {
+		$bp-name: nth($bp, 1);
+		$bp-val: nth($bp, 2);
+
+		@include bp($bp-name) {
+			width: get-width($bp-val, $width);
+		}
+	}
+}
+
+@mixin sleek-child($selector, $bp-weight) {
+	$bp-children: $element-children;
+	$last-val-child: 1;
+	$last-val-weight: 1;
+
+	#{$selector} {
+		$i: 1;
+
+		@each $bp in $breakpoints {
+			$bp-name: nth($bp, 1);
+			$bp-val: nth($bp, 2);
+
+			@if $i > length($bp-children) {
+				$child-space: $last-val-child;
+			}
+			@else {
+				$child-space: nth($bp-children, $i);
+			}
+
+			@if $i > length($bp-weight) {
+				$child-weight: $last-val-weight;
+			}
+			@else {
+				$child-weight: nth($bp-weight, $i);
+			}
+
+			@include bp($bp-name) {
+				width: (100% / $child-space) * $child-weight;
+			}
+
+			$last-val-child: $child-space;
+			$last-val-weight: $child-weight;
+
+			$i: $i + 1;
+		}
+	}
+}

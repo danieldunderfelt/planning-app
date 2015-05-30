@@ -433,19 +433,14 @@ a {
   a:hover {
     color: #e40091; }
 
-p > code, li > code {
-  font-size: 0.8em;
-  padding: 3px 5px;
-  background: #efefef; }
-
-.js-icon {
-  vertical-align: text-bottom; }
-
-.pink {
-  color: #e40091; }
-
-.blue {
-  color: #0086e4; }
-
 .app {
   color: red; }
+
+.nav-list {
+  list-style: none; }
+
+.nav-item {
+  display: inline-block;
+  padding: 5px 10px; }
+  .nav-item.\--active {
+    font-weight: bold; }

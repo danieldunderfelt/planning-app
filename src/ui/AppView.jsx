@@ -1,7 +1,6 @@
 import React from 'react'
 import Router from 'react-router'
-
-const RouteHandler = Router.RouteHandler
+let RouteHandler = Router.RouteHandler
 
 class AppView extends React.Component {
 
@@ -11,9 +10,9 @@ class AppView extends React.Component {
 	}
 
 	render() {
-		return <div className="app__frame">
+		return <div>
 			<h1>Planning app!</h1>
-			<RouteHandler />
+			<RouteHandler/>
 		</div>
 	}
 }

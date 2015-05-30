@@ -1,15 +1,19 @@
 import React from 'react'
+import Router from 'react-router'
+
+import TaskList from '../components/TaskList.jsx!'
+import Header from '../components/Header.jsx!'
 
 class TaskView extends React.Component {
 
 	constructor() {
 		super()
-		this.state = {}
 	}
 
 	render() {
 		return <section className="task-view">
-			<h1>App!</h1>
+			<Header/>
+			<TaskList/>
 		</section>
 	}
 }

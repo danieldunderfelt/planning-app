@@ -1,13 +1,13 @@
 import React from 'react'
 import Router from 'react-router'
 import routes from '../routes'
+import Alt from './Alt'
 
-export class App {
+class App {
 
 	boot() {
-
-		Router.run(routes, (Root) => {
-			React.render(<Root/>, document.getElementById('app'));
+		Router.run(routes, Router.HashLocation, (Handler) => {
+			React.render( <Handler/>, document.getElementById('app') )
 		})
 	}
 }

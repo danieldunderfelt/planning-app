@@ -1,15 +1,15 @@
 [
 	{
 		"name": "Morning",
-		"timespan": [6, 9], // Start and end hours when this timeslot is active
+		"timespan": [6, 9],
 		"id": 0,
-		"limit": 3 // Default is number of hours the slot is active for
+		"limit": 3
 	},
 	{
 		"name": "Work",
 		"timespan": [9, 17],
 		"id": 1,
-		"limit": 0 // 0 for no limit
+		"limit": 0
 	},
 	{
 		"name": "Evening",

@@ -1,62 +1,30 @@
 [
 	{
 		"title": "Create a task",
-		"completed": false,
-		"longTerm": false,
-		"timeslotId": 0,
+		"type": "task",
 		"userPriority": 1,
 		"size": 1,
-		"date": "2015-05-18",
-		"recurrent": false,
-		"weekdays": [],
-		"id": 0,
-		"pre": [],
-		"post": [],
-		"sub": []
+		"id": 0
 	},
 	{
 		"title": "Write a blog post",
-		"completed": false,
-		"longTerm": false,
-		"timeslotId": 2,
+		"type": "task",
 		"userPriority": 3,
 		"size": 3,
-		"date": null,
-		"recurrent": true,
-		"weekdays": [2], // Every Tuesday
-		"id": 1,
-		"pre": [],
-		"post": [],
-		"sub": []
+		"id": 1
 	},
 	{
 		"title": "Publish blog post",
-		"completed": false,
-		"longTerm": false,
-		"timeslotId": 2,
+		"type": "task",
 		"userPriority": 3,
 		"size": 1,
-		"date": null,
-		"recurrent": true,
-		"weekdays": [3], // Every Wednesday
-		"id": 2,
-		"pre": [1], // Post needs to be written before it can be published
-		"post": [],
-		"sub": []
+		"id": 2
 	},
 	{
 		"title": "Maintain a blog",
-		"completed": false,
-		"longTerm": true,
-		"timeslotId": 2,
+		"type": "goal",
 		"userPriority": 2,
-		"size": null,
-		"date": null,
-		"recurrent": false,
-		"weekdays": [],
-		"id": 3,
-		"pre": [],
-		"post": [],
-		"sub": [1] // The recurring blog post task is a subtask
+		"size": 5,
+		"id": 3
 	}
 ]

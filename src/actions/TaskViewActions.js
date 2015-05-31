@@ -2,8 +2,13 @@ import Alt from '../app/Alt'
 
 class TaskViewActions {
 
-	setView(view) {
-		this.dispatch(view)
+	static displayName = 'TaskViewActions'
+
+	constructor() {
+		this.generateActions(
+			'setView',
+			'setTasks'
+		)
 	}
 }
 

@@ -2,13 +2,10 @@
   "jspm": {
     "directories": {},
     "dependencies": {
-      "alt": "npm:alt@^0.17.0-alpha1",
-      "ampersand-collection": "npm:ampersand-collection@^1.4.5",
-      "ampersand-model": "npm:ampersand-model@^5.0.3",
-      "ampersand-rest-collection": "npm:ampersand-rest-collection@^4.0.0",
-      "ampersand-state": "npm:ampersand-state@^4.5.4",
+      "alt": "npm:alt@0.16",
       "axios": "npm:axios@^0.5.4",
       "caniuse-api": "npm:caniuse-api@^1.3.1",
+      "classnames": "npm:classnames@^2.1.2",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "csstyle": "npm:csstyle@^1.4.0",
       "debounce": "npm:debounce@^1.0.0",
@@ -16,9 +13,10 @@
       "json": "github:systemjs/plugin-json@^0.1.0",
       "jsx": "github:floatdrop/plugin-jsx@^1.1.0",
       "moment": "github:moment/moment@^2.10.3",
-      "react": "npm:react@0.13",
+      "object-assign": "npm:object-assign@^2.0.0",
+      "react": "npm:react@^0.14.0-alpha3",
       "react-router": "github:rackt/react-router@master",
-      "react14": "npm:react@^0.14.0-alpha3"
+      "react13": "npm:react@0.13"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",

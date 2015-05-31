@@ -1,4 +1,7 @@
 import React from 'react'
+import classNames from 'classnames'
+import Task from './Task.jsx!'
+import ViewMessages from '../utils/ViewMessages.jsx!'
 
 class TaskList extends React.Component {
 
@@ -7,7 +10,23 @@ class TaskList extends React.Component {
 	}
 
 	render() {
-		return <div>Tasks</div>
+		let classes = classNames({
+			'task-list__container': true,
+			'--error': this.props.loadError !== false,
+			'--loading': this.props.loading === true
+		})
+
+		return (
+			<div className={classes}>
+				{this.props.tasks.map(task => {
+					return (
+						<div key={task.id}>
+							<Task task={task} />
+						</div>
+					)
+				})}
+			</div>
+		)
 	}
 }
 

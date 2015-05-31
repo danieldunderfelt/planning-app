@@ -1,7 +1,7 @@
 import React from 'react'
 import Alt from '../../../app/Alt'
 import TaskViewStore from '../../../stores/TaskViewStore'
-import AltContainer from 'alt/AltContainer'
+import AltContainer from '../../utils/AltContainer'
 
 import NavItem from './NavItem.jsx!'
 
@@ -14,9 +14,15 @@ class TaskViewNav extends React.Component {
 	render() {
 		return <ul className="nav-list">
 			<AltContainer stores={{
-				viewState: TaskViewStore
-			}} actions={(props) => {
+				view: props => {
+					return {
+						store: TaskViewStore,
+						value: TaskViewStore.getState().get('view')
+					}
+				}
+			}} actions={ props => {
 				return {
+					// Decoupling action from nav item
 					onClick: (data) => {
 						return Alt.actions.TaskViewActions.setView(data)
 					}

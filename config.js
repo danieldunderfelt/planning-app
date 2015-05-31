@@ -27,9 +27,11 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.11",
     "csstyle": "npm:csstyle@1.4.0",
     "debounce": "npm:debounce@1.0.0",
+    "immstruct": "npm:immstruct@1.4.1",
     "immutable": "npm:immutable@3.7.3",
     "json": "github:systemjs/plugin-json@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
+    "lunr": "npm:lunr@0.5.9",
     "moment": "github:moment/moment@2.10.3",
     "object-assign": "npm:object-assign@2.0.0",
     "react": "npm:react@0.14.0-alpha3",
@@ -352,6 +354,13 @@ System.config({
       "string_decoder": "github:jspm/nodelibs-string_decoder@0.1.0",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
+    "npm:immstruct@1.4.1": {
+      "eventemitter3": "npm:eventemitter3@0.1.6",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "immutable": "npm:immutable@3.7.3",
+      "inherits": "npm:inherits@2.0.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:inflight@1.0.4": {
       "once": "npm:once@1.3.2",
       "process": "github:jspm/nodelibs-process@0.1.1",
@@ -490,6 +499,13 @@ System.config({
     },
     "npm:lodash@3.9.1": {
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:lunr@0.5.9": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "http": "github:jspm/nodelibs-http@1.7.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "url": "github:jspm/nodelibs-url@0.1.0"
     },
     "npm:miller-rabin@2.0.1": {
       "bn.js": "npm:bn.js@2.0.5",

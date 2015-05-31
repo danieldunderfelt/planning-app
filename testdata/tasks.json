@@ -4,27 +4,31 @@
 		"type": "task",
 		"userPriority": 1,
 		"size": 1,
-		"id": 0
+		"id": 0,
+		"fulfilled": false
 	},
 	{
 		"title": "Write a blog post",
 		"type": "task",
 		"userPriority": 3,
 		"size": 3,
-		"id": 1
+		"id": 1,
+		"fulfilled": false
 	},
 	{
 		"title": "Publish blog post",
 		"type": "task",
 		"userPriority": 3,
 		"size": 1,
-		"id": 2
+		"id": 2,
+		"fulfilled": false
 	},
 	{
 		"title": "Maintain a blog",
 		"type": "goal",
 		"userPriority": 2,
 		"size": 5,
-		"id": 3
+		"id": 3,
+		"fulfilled": false
 	}
 ]

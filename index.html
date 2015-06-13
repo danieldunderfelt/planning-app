@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Planning-app</title>
 
-	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.material.css">
+	<link rel="stylesheet" type="text/css" href="src/css/base.css">
 </head>
 <body id="csstyle">
 	<main class="app-root" id="app"></main>
@@ -13,7 +14,8 @@
 	<script src="jspm_packages/system.js"></script>
 	<script src="config.js"></script>
 	<script>
-	    System.import('src/index').catch(console.error.bind(console))
+		System.trace = true
+		System.import('src/index').catch(console.error.bind(console))
 	</script>
 </body>
 </html>

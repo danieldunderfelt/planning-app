@@ -1,14 +1,20 @@
+export let __hotReload = true
 import Alt from '../app/Alt'
+import TaskManager from '../app/Taskmanager'
 
 class TaskActions {
 
-	static displayName = 'TaskActions'
-
 	constructor() {
+
 		this.generateActions(
-			'populateTasks',
-			'loadFailed'
+			'markAsDone',
+			'deleteTask'
 		)
+	}
+
+	createTask(data) {
+		let task = TaskManager.createTask(data)
+		this.dispatch([task])
 	}
 }
 

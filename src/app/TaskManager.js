@@ -1,23 +1,11 @@
-import TaskStore from '../stores/TaskStore'
-import TaskViewActions from '../actions/TaskViewActions'
-
 class TaskManager {
 
-	constructor() {
-
-	}
-
-	getTasks(filter, condition) {
-
-	}
-
-	cacheTasks() {
-
-	}
-
-	cacheState() {
-
+	createTask(data) {
+		return {
+			title: data.title,
+			description: data.description
+		}
 	}
 }
 
-export default TaskManager
+export default new TaskManager()

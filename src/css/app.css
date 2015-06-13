@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px; }
+  @media only screen and (min-width: 768px) {
+    html {
+      font-size: 18px; } }
+
+body {
+  font-weight: 300; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: inherit; }
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 900;
+  margin-bottom: 0.5em;
+  color: #222244; }
+  h1 a {
+    color: inherit; }
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 3.4em; } }
+
+h2 {
+  font-size: 2em;
+  line-height: 1em;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  color: #222244;
+  vertical-align: baseline; }
+  h2 a {
+    color: inherit; }
+
+h2 + h3 {
+  color: #e40091;
+  font-size: 1.4em;
+  font-weight: 700; }
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 0.6em; }
+
+.smaller {
+  font-size: 0.6em; }
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 2em; }
+
+strong {
+  font-weight: 500; }
+
+a {
+  color: #0086e4;
+  text-decoration: none; }
+  a:hover {
+    color: #e40091; }
+
+.taskView {
+  color: blue; }

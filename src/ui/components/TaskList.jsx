@@ -1,7 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 import Task from './Task.jsx!'
-import ViewMessages from '../utils/ViewMessages.jsx!'
+
+import taskListStyles from '../../css/taskList.css!'
 
 class TaskList extends React.Component {
 

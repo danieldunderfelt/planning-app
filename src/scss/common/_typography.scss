@@ -1,5 +1,4 @@
 html {
-	font-family: $sourcesans;
 	font-size: 16px;
 
 	@include bp(tablet) {
@@ -20,7 +19,6 @@ h1 {
 	font-size: 2.5em;
 	line-height: 1em;
 	font-weight: 900;
-	font-family: $sourcesans;
 	margin-bottom: 0.5em;
 	color: $darkgrey;
 
@@ -36,7 +34,6 @@ h1 {
 h2 {
 	font-size: 2em;
 	line-height: 1em;
-	font-family: $oldstandard;
 	font-style: italic;
 	font-weight: 400;
 	margin-bottom: 0.5em;
@@ -50,7 +47,6 @@ h2 {
 
 h2 + h3 {
 	color: $magenta;
-	font-family: $sourcesans;
 	font-size: 1.4em;
 	font-weight: 700;
 }

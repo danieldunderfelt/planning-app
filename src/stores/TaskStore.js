@@ -1,34 +1,27 @@
 import Alt from '../app/Alt'
-import { datasource } from 'alt/utils/decorators'
 import TaskActions from '../actions/TaskActions'
-import TaskSource from '../sources/TaskSource'
 
-@datasource(TaskSource)
 class TaskStore {
 
 	constructor() {
 		this.tasks = []
-		this.loadError = false
-
-		this.bindListeners({
-			receivePayload: TaskActions.POPULATE_TASKS,
-			handleError: TaskActions.LOAD_FAILED
-		})
+		this.bindActions(TaskActions)
 	}
 
-	receivePayload(data) {
-		this.loadError = false
-		this.addTasks(data)
+	createTask(task) {
+		this.addTasks(task)
 	}
 
-	handleError(err) {
-		this.loadError = true
+	markAsDone(task) {
+		// noop
+	}
+
+	deleteTask(task) {
+		// noop
 	}
 
 	addTasks(tasks) {
-		this.setState({
-			tasks: tasks.data
-		})
+		tasks.forEach(task => this.tasks.push(task))
 	}
 }
 

@@ -1,3 +1,4 @@
+export let __hotReload = true
 import React from 'react'
 import Router from 'react-router'
 import routes from '../routes'
@@ -6,11 +7,13 @@ import TaskStore from '../stores/TaskStore'
 
 class App {
 
+	/**
+	 * Only run once, at app boot.
+	 */
 	boot() {
-		TaskStore.getTasks()
 
 		Router.run(routes, Router.HashLocation, (Handler) => {
-			React.render( <Handler/>, document.getElementById('app') )
+			React.render(<Handler/>, document.getElementById('app'))
 		})
 	}
 }

@@ -12,7 +12,7 @@ class AppView extends React.Component {
 	render() {
 		return (
 			<div className="container-fluid">
-				<h1>Planning app!</h1>
+				<h1>Planning app hahah aa!</h1>
 				<RouteHandler/>
 			</div>
 		)

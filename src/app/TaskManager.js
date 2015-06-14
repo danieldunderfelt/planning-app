@@ -1,10 +1,9 @@
+export let __hotReload = true
+
 class TaskManager {
 
 	createTask(data) {
-		return {
-			title: data.title,
-			description: data.description
-		}
+		return data
 	}
 }
 

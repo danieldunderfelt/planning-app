@@ -1,22 +1,33 @@
 import React from 'react'
 import Router from 'react-router'
+import mui from 'mui'
+import rbs from 'react-bootstrap'
+let ThemeManager = new mui.Styles.ThemeManager()
 let RouteHandler = Router.RouteHandler
+let {Grid} = rbs
 
 class AppView extends React.Component {
 
-	constructor() {
-		super()
-		this.state = {}
+	getChildContext() {
+		return {
+			muiTheme: ThemeManager.getCurrentTheme()
+		}
 	}
 
 	render() {
 		return (
-			<div className="container-fluid">
-				<h1>Planning app hahah aa!</h1>
-				<RouteHandler/>
-			</div>
+			<Grid>
+				<div>
+					<h1>Planning app!</h1>
+					<RouteHandler/>
+				</div>
+			</Grid>
 		)
 	}
+}
+
+AppView.childContextTypes = {
+	muiTheme: React.PropTypes.object
 }
 
 export default AppView

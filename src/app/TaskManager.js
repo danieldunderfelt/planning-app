@@ -3,7 +3,11 @@ export let __hotReload = true
 class TaskManager {
 
 	createTask(data) {
-		return data
+		return {
+			title: data.title,
+			description: data.description,
+			type: data.taskType
+		}
 	}
 }
 

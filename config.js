@@ -30,6 +30,7 @@ System.config({
     "jsx": "npm:jspm-loader-jsx@0.0.1",
     "lunr": "npm:lunr@0.5.9",
     "moment": "github:moment/moment@2.10.3",
+    "mui": "npm:mui@master",
     "object-assign": "npm:object-assign@2.1.1",
     "react": "npm:react@0.13.3",
     "react-bootstrap": "npm:react-bootstrap@0.23.3",
@@ -164,6 +165,9 @@ System.config({
     "npm:camel-case@1.1.2": {
       "sentence-case": "npm:sentence-case@1.1.2",
       "upper-case": "npm:upper-case@1.1.2"
+    },
+    "npm:classnames@1.2.2": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
     "npm:classnames@2.1.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -389,6 +393,13 @@ System.config({
       "minimist": "npm:minimist@0.0.8",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:mui@master": {
+      "classnames": "npm:classnames@1.2.2",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "react": "npm:react@0.13.3",
+      "react-draggable2": "npm:react-draggable2@0.5.1",
+      "react-tap-event-plugin": "npm:react-tap-event-plugin@0.1.7"
     },
     "npm:once@1.3.2": {
       "wrappy": "npm:wrappy@1.0.1"

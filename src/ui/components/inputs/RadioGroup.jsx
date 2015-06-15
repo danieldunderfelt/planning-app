@@ -2,33 +2,42 @@ import React from 'react'
 import Input from 'react-bootstrap/lib/Input'
 let p = React.PropTypes
 
-function radio(name, selectedValue, onChange) {
-	return class _inputWrapper extends React.Component {
-
-		render() {
-			return (
-				<Input
-					{...this.props}
-					type="radio"
-					name={name}
-					checked={this.props.value === selectedValue}
-					onChange={onChange.bind(null, this.props.value)} />
-			)
-		}
-	}
-}
-
 class RadioGroup extends React.Component {
 
 	constructor() {
 		super()
+
+		this.state = {
+			value: ""
+		}
+	}
+
+	componentWillMount() {
+		this.setState({
+			value: this.props.selectedValue
+		})
+	}
+
+	getValue() {
+		return this.state.value
+	}
+
+	onChange(value) {
+		this.setState({
+			value: value
+		})
+
+		this.props.onChange
 	}
 
 	render() {
-		let {name, selectedValue, children, onChange} = this.props
+		let {name, selectedValue, children} = this.props
 		return (
 			<div>
-				{children && children(radio(name, selectedValue, onChange))}
+				{React.Children.map(
+					this.props.children,
+					child => React.cloneElement(child, newProps, ...newChildren))
+				}
 			</div>
 		)
 	}

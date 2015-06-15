@@ -2,8 +2,6 @@ import React from 'react'
 import classNames from 'classnames'
 import Task from './Task.jsx!'
 
-import taskListStyles from '../../css/taskList.css!'
-
 class TaskList extends React.Component {
 
 	constructor() {

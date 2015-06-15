@@ -63,41 +63,45 @@ $default-width: 940px !default;
 	@return $width / $children;
 }
 
-@mixin sleek($selector, $bp-children) {
+@mixin sleek($bp-children, $target: false) {
 	$element-children: $bp-children !global;
 	$last-val: 1;
 
-	#{$selector} {
-		@include clear;
+	@include clear;
 
-		$i: 1;
+	$i: 1;
 
-		@each $bp in $breakpoints {
-			$bp-name: nth($bp, 1);
-			$bp-val: nth($bp, 2);
+	@each $bp in $breakpoints {
+		$bp-name: nth($bp, 1);
+		$bp-val: nth($bp, 2);
 
-			@if $i > length($bp-children) {
-				$child-space: $last-val;
-			}
-			@else {
-				$child-space: nth($bp-children, $i);
-			}
-
-			@include bp($bp-name) {
-
-				> * {
-					width: get-child-width($child-space, 100%);
-					float: left;
-				}
-			}
-
-			$last-val: $child-space;
-
-			$i: $i + 1;
+		@if $i > length($bp-children) {
+			$child-space: $last-val;
+		}
+		@else {
+			$child-space: nth($bp-children, $i);
 		}
 
-		@content;
+		@include bp($bp-name) {
+
+			@if $target != false {
+
+				@each $el in $target {
+
+					#{$el} {
+						width: get-child-width($child-space, 100%);
+						float: left;
+					}
+				}
+			}
+		}
+
+		$last-val: $child-space;
+
+		$i: $i + 1;
 	}
+
+	@content;
 }
 
 @mixin sleek-outer($center: true, $width: $default-width) {
@@ -120,40 +124,38 @@ $default-width: 940px !default;
 	}
 }
 
-@mixin sleek-child($selector, $bp-weight) {
+@mixin sleek-child($bp-weight) {
 	$bp-children: $element-children;
 	$last-val-child: 1;
 	$last-val-weight: 1;
 
-	#{$selector} {
-		$i: 1;
+	$i: 1;
 
-		@each $bp in $breakpoints {
-			$bp-name: nth($bp, 1);
-			$bp-val: nth($bp, 2);
+	@each $bp in $breakpoints {
+		$bp-name: nth($bp, 1);
+		$bp-val: nth($bp, 2);
 
-			@if $i > length($bp-children) {
-				$child-space: $last-val-child;
-			}
-			@else {
-				$child-space: nth($bp-children, $i);
-			}
-
-			@if $i > length($bp-weight) {
-				$child-weight: $last-val-weight;
-			}
-			@else {
-				$child-weight: nth($bp-weight, $i);
-			}
-
-			@include bp($bp-name) {
-				width: (100% / $child-space) * $child-weight;
-			}
-
-			$last-val-child: $child-space;
-			$last-val-weight: $child-weight;
-
-			$i: $i + 1;
+		@if $i > length($bp-children) {
+			$child-space: $last-val-child;
 		}
+		@else {
+			$child-space: nth($bp-children, $i);
+		}
+
+		@if $i > length($bp-weight) {
+			$child-weight: $last-val-weight;
+		}
+		@else {
+			$child-weight: nth($bp-weight, $i);
+		}
+
+		@include bp($bp-name) {
+			width: (100% / $child-space) * $child-weight;
+		}
+
+		$last-val-child: $child-space;
+		$last-val-weight: $child-weight;
+
+		$i: $i + 1;
 	}
 }
